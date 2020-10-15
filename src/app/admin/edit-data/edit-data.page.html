@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{loadedEditedHome.title}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentAlert()"><ion-icon name="trash" slot="icon-only"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-img [src]="loadedEditedHome.imageUrl"></ion-img></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>  
+        <ion-item>
+          <ion-label position="floating">Foto 1 </ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedImage1']"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Foto 2 </ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedImage2']"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Merek</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editednama']"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Model </ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedModel']"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Harga </ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedHarga']"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Stok </ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedStok']"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="type === 'CPU'">
+          <ion-label position="floating">Base Clock</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedbase_Clock']"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="type === 'CPU'">
+          <ion-label position="floating">Boost Clock</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedboost_Clock']"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="type === 'CPU'">
+          <ion-label position="floating">Jumlah Core</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedCore']"></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="type === 'CPU'">
+          <ion-label position="floating">Thread</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedThread']"></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="type === 'RAM'">
+          <ion-label position="floating">Speed</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedSpeed']"></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="type === 'RAM'">
+          <ion-label position="floating">Ukuran</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedukuran']"></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="type === 'Motherboard'">
+          <ion-label position="floating">Chipset</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedchipset'] "></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="type === 'Motherboard'">
+          <ion-label position="floating">Processor</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedprocessor']"></ion-input>
+        </ion-item>
+          <ion-button (click)="editHome()">Edit</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
